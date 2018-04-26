@@ -21,6 +21,14 @@ const buttonFactory = (classList, textContent) => {
     theButton.placeholder = textContent
     return theButton
 }
+    //create card component
+
+const cardFactory = (classList, textContent) => {
+    const theSection = document.createElement("section")
+    theSection.classList = classList
+    theSection.placeholder = textContent
+    return theSection
+}
 
 const createCardButton = buttonFactory("button--submit", "Create Card")
 
@@ -30,8 +38,14 @@ fragment.appendChild()
 //get value of input field
 //create card component with text inside
 createCardButton.addEventListener("click",function (){
-    document.getElementById("input--text")   
+    const userEntry = cardTextInput.value
+
+    output.appendChild(cardFactory("card", userEntry))
+
+    //clears input field
+    cardTextInput = ""
 })
 //create card component
+
 
 output.appendChild(fragment)
